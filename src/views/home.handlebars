@@ -1,0 +1,7 @@
+<h1>Bem vindo a home</h1>
+{{#each posts}}
+    <h2>Titulo: {{this.dataValues.titulo}}</h2>
+    <p>Conteudo: {{this.dataValues.conteudo}}</p>
+    <a href="/deletar/{{this.dataValues.id}}"><button>Deletar</button></a>
+    <hr />
+{{/each}}
