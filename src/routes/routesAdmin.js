@@ -6,12 +6,16 @@ const router = express.Router();
     res.render("./dashboard/index");
   });
 
-  router.get('/posts', (req, res) => {
-    res.send("Posts");
+  router.get('/category', (req, res) => {
+    res.render("./category/index");
   });
 
-  router.get('/categorias', (req, res) => {
-    res.send("Ccategorias");
+  router.get('/add', (req, res) => {
+    res.render("./category/add");
+  });
+
+  router.post('/save', (req, res) => {
+    res.redirect("./category");
   });
   
 module.exports = router;

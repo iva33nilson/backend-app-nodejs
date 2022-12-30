@@ -36,12 +36,12 @@ Instale my-project com npm
     
 ## Suporte
 
-Para suporte, mande um email para fake@fake.com ou entre em nosso canal do Slack.
+Para suporte, mande um email para ou entre em nosso canal do Slack.
 
 
 ## Feedback
 
-Se você tiver algum feedback, por favor nos deixe saber por meio de fake@fake.com
+Se você tiver algum feedback, por favor nos deixe saber por meio de 
 
 
 ## Deploy

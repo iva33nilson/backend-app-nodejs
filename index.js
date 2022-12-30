@@ -3,11 +3,28 @@ const { engine } = require ('express-handlebars');
 const bodyParser = require('body-parser');
 const app = express();
 const admin = require('./src/routes/routesAdmin');
+
+const mongoose = require('mongoose');
+require('dotenv').config();
+
 const port = 3000
 
 const path = require('path');
 
 //Configurações
+    //Mongoose
+    const dbName = process.env.DB_NAME;
+    const dbHost = process.env.DB_HOST;
+    main().then(() =>{
+            console.log('Connected to Mongoose');
+        }).catch((err) =>{
+            console.log('Ocorreu erros: '+err);
+        });
+    async function main() {
+        await mongoose.connect(`${dbHost}/${dbName}`,{
+        });
+    }
+
     //Body parsing
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
