@@ -7,11 +7,28 @@ const admin = require('./src/routes/routesAdmin');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const session = require('express-session');
+const flash = require('connect-flash');
+
 const port = 3000
 
 const path = require('path');
 
 //Configurações
+
+    //session
+    app.use(session({
+        secret:'keyMachine',
+        resave: true,
+        saveUninitialized: true
+    }))
+    app.use(flash())
+    //Middleware
+    app.use((req, res, next) =>{
+        res.locals.success_msg = req.flash('success_msg');
+        res.locals.err_msg = req.flash('err_msg');
+        next()
+    })
     //Mongoose
     const dbName = process.env.DB_NAME;
     const dbHost = process.env.DB_HOST;
